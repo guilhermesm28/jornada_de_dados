@@ -93,3 +93,7 @@ repos:
 6. Caso algum ajuste falhar, as bibliotecas farão o ajuste automaticamente e é preciso adicionar as mudanças e fazer o commit novamente. É possível que alguma falha não seja corrigida automaticamente, principalmente se for a biblioteca Flake8, então é preciso fazer o ajuste manualmente como por exemplo o código **E501**, ou então inserir esse ID como *extend-ignore* no arquivo **.flake8**.
 
 Não é necessário ter as bibliotecas instaladas a parte, apenas com o pre-commit e o arquivo de configuração já é possível executar, mas apenas no momento do commit. Se for necessário fazer algum teste antes, é recomendado instalar as bibliotecas separadamente.
+
+## Referências
+
+O repositório com o conteúdo da aula está no [Github](https://github.com/lvgalvao/data-engineering-roadmap/tree/main/Bootcamp%20-%20Python%20para%20dados/aula06/aovivo) do Luciano.
