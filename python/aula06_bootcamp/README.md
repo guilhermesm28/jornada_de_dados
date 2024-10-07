@@ -87,6 +87,9 @@ repos:
       - id: flake8
 ```
 
-3. Garantir que a versão do python citada no script acima está instalada no pyenv.
+3. Garantir que a versão do Python citada no script acima está instalada no Pyenv.
 4. Executar o comando para configurar o pre-commit dentro da pasta .git: `poetry run pre-commit install`
 5. Executar o commit para que a biblioteca faça a análise dos scripts: `git commit -m 'configurando bibliotecas para padronização de código'`
+6. Caso algum ajuste falhar, as bibliotecas farão o ajuste automaticamente e é preciso adicionar as mudanças e fazer o commit novamente. É possível que alguma falha não seja corrigida automaticamente, principalmente se for a biblioteca Flake8, então é preciso fazer o ajuste manualmente como por exemplo o código **E501**, ou então inserir esse ID como *extend-ignore* no arquivo **.flake8**.
+
+Não é necessário ter as bibliotecas instaladas a parte, apenas com o pre-commit e o arquivo de configuração já é possível executar, mas apenas no momento do commit. Se for necessário fazer algum teste antes, é recomendado instalar as bibliotecas separadamente.
