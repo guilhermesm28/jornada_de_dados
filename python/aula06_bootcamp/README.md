@@ -85,6 +85,7 @@ repos:
     rev: 7.0.0
     hooks:
       - id: flake8
+        args: [--config=python/.flake8]
 ```
 
 3. Garantir que a versão do Python citada no script acima está instalada no Pyenv.
