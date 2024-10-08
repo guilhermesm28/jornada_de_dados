@@ -2,7 +2,11 @@
 
 Tópicos de estudo da aula:
 - Logs
-- Decoradores
+- Decoradores (@)
+
+Implementando o **utils_log.py** com a função `log_decorator`, não é necessário incluir *try-except* em todas as funções, pois essa função com o log de erro no decorador já chama a função original e mantém a tratativa de erros apenas nele, tornando o código mais limpo.
+
+Na aula vimos que o uso de decoradores é infinito e vai da criatividade do desenvolvedor, como por exemplo criar um decorador de tempo de execução de uma função, um decorador de tentativas de execução de uma função que aborta caso estoure um limite pré-definido ou até mesmo um decorador de cache.
 
 ## Loguru
 
@@ -27,12 +31,15 @@ logger.add(
 logger.add(
     "meu_arquivo_de_logs.log",  # Arquivo onde os logs serão salvos
     format="{time} {level} {message} {file}",
-    level="INFO"
+    level="INFO" # qual o nível de log que quero gravar no arquivo
 )
 
 # Exemplo de uso do logger
+logger.debug("Este é um log para o desenvolvedor no momento do debug.")
 logger.info("Este é um log de informação.")
+logger.warning("Este é um log de atenção.")
 logger.error("Este é um log de erro.")
+logger.critical("Este é um log de falha crítica que aborta a aplicação.")
 ```
 
 ## Sentry

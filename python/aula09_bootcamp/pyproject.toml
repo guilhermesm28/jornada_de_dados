@@ -8,8 +8,14 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 loguru = "^0.7.2"
+pandas = "^2.2.3"
+fastparquet = "^2024.5.0"
+pre-commit = "^4.0.1"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
