@@ -7,8 +7,15 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+fastapi = "^0.115.2"
+uvicorn = "^0.31.1"
+sqlalchemy = "^2.0.35"
+streamlit = "^1.39.0"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
