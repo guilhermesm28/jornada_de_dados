@@ -4,7 +4,7 @@ Tópicos de estudo da aula:
 - Performance Tuning em SQL
 - Ordem de execução e otimização de consultas
 
-## Ordem de execução
+## Ordem de execução do SQL
 
 1. Verifica se existe erro de sintaxe
 2. Verifica se existe erro de semântica
