@@ -9,7 +9,7 @@ CREATE TABLE
 
 -- Inserção de 1 milhão de registros
 CREATE
-OR REPLACE FUNCTION random_estado () RETURNS VARCHAR(3) AS $$
+OR REPLACE FUNCTION random_estado() RETURNS VARCHAR(3) AS $$
 BEGIN
    RETURN CASE floor(random() * 5)
          WHEN 0 THEN 'SP'
