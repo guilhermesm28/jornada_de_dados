@@ -28,4 +28,5 @@ O Docker facilita a configuração e execução do ambiente de desenvolvimento. 
     ```
 
 2. Criar a imagem com o comando: `docker build -t minha_primeira_imagem .`
-3. Criar e executar o container com o comando: `docker run -d -p 8501:8501 --name meu_primeiro_container minha_primeira_imagem`
+3. (opcional) Criar e executar o container com o comando (essa etapa pode ser feita via Docker Desktop): `docker run -d -p 8501:8501 --name meu_primeiro_container minha_primeira_imagem`
+4. (opcional) Ao final dos testes, desligar e remover os containers e imagens para não sobrecarregar o disco.
