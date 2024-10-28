@@ -7,7 +7,14 @@ O Docker facilita a configuração e execução do ambiente de desenvolvimento. 
 
 ## Como utilizar
 
-1. Criar os arquivos `Dockerfile` e `.dockerignore` e preencher conforme exemplos abaixo:
+Se o projeto for pequeno, basta utilizar apenas o **Dockerfile**, se não é melhor utilizar em conjunto com o **docker-compose.yml** para não ter que ficar criando vários arquivos para cada container.
+
+Resumindo:
+
+- Dockerfile constrói uma imagem individual.
+- Docker Compose coordena e roda múltiplos containers juntos.
+
+1. Criar os arquivos `.dockerignore`, `Dockerfile` e `docker-compose.yml` e preencher conforme exemplos abaixo:
 
     ### .dockerignore
 
@@ -25,6 +32,49 @@ O Docker facilita a configuração e execução do ambiente de desenvolvimento. 
     RUN poetry install
     EXPOSE 8501
     ENTRYPOINT [ "poetry", "run", "streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0" ]
+    ```
+
+    ### docker-compose.yml
+
+    ```docker-compose.yml
+    version: '3.8'
+
+    services:
+        db:
+            image: postgres
+            volumes:
+            - postgres_data:/var/lib/postgresql/data
+            environment:
+            POSTGRES_USER: myuser
+            POSTGRES_PASSWORD: mypassword
+            POSTGRES_DB: mydatabase
+            ports:
+            - "5432:5432"
+
+        pgadmin:
+            image: dpage/pgadmin4
+            environment:
+            PGADMIN_DEFAULT_EMAIL: user@domain.com
+            PGADMIN_DEFAULT_PASSWORD: adminpassword
+            ports:
+            - "8080:80"
+            depends_on:
+            - db
+
+        app:
+            build: .
+            ports:
+            - "8501:8501"
+            environment:
+            DB_HOST: db
+            DB_NAME: mydatabase
+            DB_USER: myuser
+            DB_PASS: mypassword
+            depends_on:
+            - db
+
+    volumes:
+        postgres_data:
     ```
 
 2. Criar a imagem com o comando: `docker build -t minha_primeira_imagem .`
