@@ -80,3 +80,15 @@ Resumindo:
 2. Criar a imagem com o comando: `docker build -t minha_primeira_imagem .`
 3. (opcional) Criar e executar o container com o comando (essa etapa pode ser feita via Docker Desktop): `docker run -d -p 8501:8501 --name meu_primeiro_container minha_primeira_imagem`
 4. (opcional) Ao final dos testes, desligar e remover os containers e imagens para não sobrecarregar o disco.
+
+## Comandos
+
+- Baixar imagens: `docker pull wordpress`
+- Verificar imagens: `docker images`
+- Executar uma imagem criando um container: `docker run --name -p 8080:80 -d wordpress`
+- Listar containers em execução: `docker ps`
+- Parar um container: `docker stop ID_DO_CONTAINER`
+- Iniciar um container: `docker start ID_DO_CONTAINER`
+- Reiniciar um container: `docker restart ID_DO_CONTAINER`
+- Remover um container (deve estar parado): `docker rm ID_DO_CONTAINER`
+- Remover uma imagem (o container deve estar parado): `docker rmi ID_DA_IMAGEM`
