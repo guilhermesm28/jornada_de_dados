@@ -92,3 +92,7 @@ Resumindo:
 - Reiniciar um container: `docker restart ID_DO_CONTAINER`
 - Remover um container (deve estar parado): `docker rm ID_DO_CONTAINER`
 - Remover uma imagem (o container deve estar parado): `docker rmi ID_DA_IMAGEM`
+
+## Referências
+
+O repositório com o conteúdo da aula está no [Github](https://github.com/lvgalvao/data-engineering-roadmap/tree/main/03-deploy-de-apps-dados-com-docker) do Luciano.
