@@ -7,6 +7,7 @@
 - `exemplo_00.py`: Pipeline simples com 3 atividades encadeadas
 - `exemplo_01.py`: Pipeline programada para executar a cada 10 segundos
 - `exemplo_02.py`: Pipeline refatorada com logs
+- `exemplo_03.py`: Pipeline com tela no streamlit para visualizar o log
 
 ## Referências
 
