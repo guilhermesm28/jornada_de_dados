@@ -5,7 +5,7 @@ import streamlit as st
 
 
 def load_data():
-    df = pd.read_csv("execution_logs.log")
+    df = pd.read_csv("logs/execution_logs.log")
     return df
 
 

@@ -3,7 +3,10 @@ from time import sleep
 from loguru import logger
 
 logger.add(
-    "execution_logs.log", format="{time} - {message}", level="INFO", rotation="1 day"
+    "logs/execution_logs.log",
+    format="{time} - {message}",
+    level="INFO",
+    rotation="1 day",
 )
 
 
