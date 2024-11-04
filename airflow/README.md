@@ -9,6 +9,8 @@ Após realizar a instalação clicando no link acima e seguindo o passo a passo,
 
 Neste caso, criei uma pasta **astro** e dentro dela executei o comando acima. Após a execução, vários arquivos e diretórios são gerados automaticamente para configurarmos a infraestrutura do Airflow.
 
+O próximo comando que devemos executar é o `astro dev start`, que irá baixar um container do Docker com o Airflow já configurado. É necessário estar no diretório onde foi executado o comando de inicio do astro e estar com o Docker em execução.
+
 ## Arquivos de exemplo (src)
 
 - `exemplo_00.py`: Pipeline simples com 3 atividades encadeadas
