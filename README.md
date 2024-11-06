@@ -1,8 +1,16 @@
 # Jornada de Dados
 
-A **Jornada de Dados** é um curso criado pelo [Luciano Filho](https://github.com/lvgalvao) com foco em Engenharia de Dados e aborda todas as tecnologias mais atuais da área.
-Este repositório possui todo o conteúdo que estudei/estou estudando e todas as referências em cada diretório levam ao repositório original do projeto.
+Bem-vindo ao meu repositório de estudos do curso **Jornada de Dados** do [Luciano Filho](https://github.com/lvgalvao). Aqui, você encontrará todo o material, anotações e projetos que desenvolvi ao longo do curso, assim como o progresso das atividades em andamento. Para mais detalhes sobre o curso, consulte o [Github](https://github.com/lvgalvao/data-engineering-roadmap) do projeto original.
 
-## Referências
+# Jornada de Dados
 
-O repositório com todo o conteúdo do curso está no [Github](https://github.com/lvgalvao/data-engineering-roadmap) do Luciano.
+Bem-vindo ao meu repositório de estudos do curso "Jornada de Dados" do Luciano Filho. Aqui, você encontrará todo o material, anotações e projetos que desenvolvi ao longo do curso, assim como o progresso das atividades em andamento. Para mais detalhes sobre o curso, consulte o [repositório original](URL_DO_REPOSITORIO_ORIGINAL).
+
+## Estrutura do repositório
+
+```plaintext
+.
+├── airflow            # Workshop de Airflow            (Em andamento)
+├── docker             # Workshop de Docker             (Finalizado)
+├── python             # Bootcamp de Python             (Finalizado)
+└── sql                # Bootcamp de SQL                (Finalizado)
