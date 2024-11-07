@@ -1,6 +1,6 @@
 # Workshop de Streamlit
 
-
+O **Streamlit** é basicamente uma abstração de HTML, CSS e Javascript no Python, o que torna fácil o desenvolvimento de front-end.
 
 ## Referências
 
