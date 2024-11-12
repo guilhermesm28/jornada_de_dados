@@ -14,6 +14,8 @@ sqlalchemy = "^2.0.36"
 psycopg2 = "^2.9.10"
 streamlit-folium = "^0.23.1"
 wordcloud = "^1.9.4"
+faker = "^30.10.0"
+confluent-kafka = "^2.6.0"
 
 
 [build-system]
