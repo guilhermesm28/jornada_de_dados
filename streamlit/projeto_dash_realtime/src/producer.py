@@ -34,7 +34,9 @@ def generate_fake_orders(start_date="today", end_date="today"):
 
 
 def generate_fake_orders_parquet(n_rows=1000):
-    data = [generate_fake_orders() for _ in range(n_rows)]
+    data = [
+        generate_fake_orders(start_date="-30d", end_date="-1d") for _ in range(n_rows)
+    ]
 
     pd.DataFrame(data).to_parquet("data/orders.parquet")
 
