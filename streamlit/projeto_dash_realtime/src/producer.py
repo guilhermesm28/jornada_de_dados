@@ -16,7 +16,7 @@ products = [
 ]
 
 
-def generate_fake_orders(start_date="today", end_date="today"):
+def generate_fake_order(start_date="today", end_date="today"):
     quantity = fake.random_int(min=1, max=10)
     product = fake.random_element(elements=products)
     product_name = product[0]
@@ -33,9 +33,9 @@ def generate_fake_orders(start_date="today", end_date="today"):
     }
 
 
-def generate_fake_orders_parquet(n_rows=1000):
+def generate_fake_order_parquet(n_rows=1000):
     data = [
-        generate_fake_orders(start_date="-30d", end_date="-1d") for _ in range(n_rows)
+        generate_fake_order(start_date="-30d", end_date="-1d") for _ in range(n_rows)
     ]
 
     pd.DataFrame(data).to_parquet("data/orders.parquet")
@@ -43,6 +43,6 @@ def generate_fake_orders_parquet(n_rows=1000):
 
 if __name__ == "__main__":
     # for _ in range(10):
-    #     print(generate_fake_orders())
+    #     print(generate_fake_order())
 
-    generate_fake_orders_parquet()
+    generate_fake_order_parquet()

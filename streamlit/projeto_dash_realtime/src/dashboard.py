@@ -1,4 +1,5 @@
 import pandas as pd
+from producer import generate_fake_order
 
 import streamlit as st
 
@@ -15,50 +16,65 @@ def get_data():
     return df
 
 
+def new_order():
+    dict_data = generate_fake_order()
+    new_order = pd.DataFrame([dict_data])
+    new_order["order_date"] = pd.to_datetime(new_order["order_date"])
+
+    return new_order
+
+
 orders_df = get_data()
 
 st.title("Workshop Streamlit - Realtime Dashboard")
 
-orders_col, items_col, ticket_col, total_col = st.columns(4)
+dashboard_placeholder = st.empty()
 
-with orders_col:
-    quantity = len(orders_df)
-    quantity = f"{quantity:,.0f}"
-    st.metric("Orders", quantity)
+while True:
+    with dashboard_placeholder.container():
 
-with items_col:
-    items = orders_df["quantity"].sum()
-    items = f"{items:,.0f}"
-    st.metric("Items", items)
+        orders_col, items_col, ticket_col, total_col = st.columns(4)
 
-with ticket_col:
-    ticket = orders_df["total_price"].mean()
-    ticket = f"{ticket:,.0f}"
-    st.metric("Ticket", ticket)
+        with orders_col:
+            quantity = len(orders_df)
+            quantity = f"{quantity:,.0f}"
+            st.metric("Orders", quantity)
 
-with total_col:
-    total = orders_df["total_price"].sum()
-    total = f"{total:,.0f}"
-    st.metric("Total", total)
+        with items_col:
+            items = orders_df["quantity"].sum()
+            items = f"{items:,.0f}"
+            st.metric("Items", items)
 
-vendor_barchat, region_barchat = st.columns(2)
+        with ticket_col:
+            ticket = orders_df["total_price"].mean()
+            ticket = f"{ticket:,.0f}"
+            st.metric("Ticket", ticket)
 
-st.header("Charts")
-with vendor_barchat:
-    st.subheader("Vendors")
-    st.bar_chart(orders_df, x="vendor", y="total_price")
+        with total_col:
+            total = orders_df["total_price"].sum()
+            total = f"{total:,.0f}"
+            st.metric("Total", total)
 
-with region_barchat:
-    st.subheader("Regions")
-    st.bar_chart(orders_df, x="region", y="total_price")
+        vendor_barchat, region_barchat = st.columns(2)
 
-st.header("Sales by Date")
+        st.header("Charts")
+        with vendor_barchat:
+            st.subheader("Vendors")
+            st.bar_chart(orders_df, x="vendor", y="total_price")
 
-orders_df = orders_df.sort_values(by="order_date")
-line_df = orders_df.groupby("order_date")["total_price"].sum().reset_index()
+        with region_barchat:
+            st.subheader("Regions")
+            st.bar_chart(orders_df, x="region", y="total_price")
 
-st.line_chart(line_df, x="order_date", y="total_price")
+        st.header("Sales by Date")
 
-st.header("Orders table")
+        orders_df = orders_df.sort_values(by="order_date")
+        line_df = orders_df.groupby("order_date")["total_price"].sum().reset_index()
 
-st.dataframe(orders_df)
+        st.line_chart(line_df, x="order_date", y="total_price")
+
+        st.header("Orders table")
+
+        st.dataframe(orders_df)
+
+        orders_df = pd.concat([orders_df, new_order()], ignore_index=True)
