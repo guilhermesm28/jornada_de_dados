@@ -40,6 +40,10 @@ ruff check . --fix
 ruff format .
 ```
 
+## Dashboard Realtime
+
+Para o projeto *Dashboard Realtime*, utilizamos o Kafka. Para isso, foi necessário se cadastrar no site do [Confluent](https://confluent.cloud/home) e no menu *Billing & Payment* incluir o cupom **CONFLUENTDEV1** para não ter a necessidade de incluir o cartão de crédito. Após isso, basta criar um novo environment com as opções básicas.
+
 ## Referências
 
 O repositório com o conteúdo da aula está no [Github](https://github.com/lvgalvao/data-engineering-roadmap/tree/main/09-streamlit-dashboard-realtime) do Luciano.
