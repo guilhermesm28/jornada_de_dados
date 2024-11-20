@@ -1,5 +1,12 @@
+import json
+import os
+
 import pandas as pd
+from confluent_kafka import Producer
+from dotenv import load_dotenv
 from faker import Faker
+
+load_dotenv()
 
 fake = Faker("pt_BR")
 
@@ -41,8 +48,31 @@ def generate_fake_order_parquet(n_rows=1000):
     pd.DataFrame(data).to_parquet("data/orders.parquet")
 
 
+producer_conf = {
+    "bootstrap.servers": os.getenv("BOOTSTRAP_SERVERS"),
+    "security.protocol": "SASL_SSL",
+    "sasl.mechanisms": "PLAIN",
+    "sasl.username": os.getenv("SASL_USERNAME"),
+    "sasl.password": os.getenv("SASL_PASSWORD"),
+}
+
+producer = Producer(producer_conf)
+
+
+def generate_message(data):
+    key = data["order_id"]
+    value = json.dumps(data).encode("utf-8")
+    producer.produce(topic="orders", key=key, value=value)
+    print(f"Order {key} sent")
+    producer.flush()
+
+
 if __name__ == "__main__":
     # for _ in range(10):
     #     print(generate_fake_order())
 
-    generate_fake_order_parquet()
+    # generate_fake_order_parquet()
+
+    while True:
+        data = generate_fake_order()
+        generate_message(data)
