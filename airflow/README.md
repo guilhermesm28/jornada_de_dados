@@ -8,6 +8,9 @@ Basicamente, para utilizar o Airflow em códigos Python, basta seguir o seguinte
 - Incluir o decorador @task antes de cada tarefa do pipeline
 - Definir a sequência de execução das tarefas no final do pipeline
 
+Observações:
+- Caso tenham várias scripts na pasta "dags", é preciso que o *dag_id* e o nome da função sejam diferentes em cada script.
+
 ## Como executar
 
 Como o Airflow depende de muitas configurações para que a infra funcione, utilizamos o [Astro CLI](https://www.astronomer.io/docs/astro/cli/install-cli?tab=windowswithwinget#install-the-astro-cli) para nos auxiliar na criação da infraestrutura.
@@ -21,7 +24,9 @@ Após a execução, vários arquivos e diretórios são gerados automaticamente 
 O próximo comando que devemos executar é o `astro dev start`, que irá baixar um container do Docker com o Airflow já configurado.
 É necessário estar no diretório onde foi executado o comando de início do astro e estar com o Docker em execução.
 
-Caso seja necessário atualizar os containers, basta executar o comando `astro dev restart`
+Caso seja necessário atualizar os containers, basta executar o comando `astro dev restart`.
+
+Para fazer o deploy (pago) na Astronomer, basta executar o comando `astro deploy`.
 
 ## Arquivos de exemplo (src)
 
