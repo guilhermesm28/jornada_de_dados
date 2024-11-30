@@ -10,8 +10,10 @@ Basicamente, para utilizar o Airflow em códigos Python, basta seguir o seguinte
 
 Observações:
 - Caso tenham várias scripts na pasta "dags", é preciso que o *dag_id* e o nome da função sejam diferentes em cada script.
+- Tudo que não for dags (ex: scripts mvc ou módulos) devem ser inseridos na pasta *include*. No exemplo da aula estamos refatorando a aula 18 do bootcamp de Python. Neste caso, o script "main.py" será a dag.
+- Para utilizar o Pydantic com Airflow, é necessário colocar todos os schemas na configuração do arquivo **.env**, por questões de segurança da infra do Airflow. `AIRFLOW__CORE__ALLOWED_DESERIALIZATION_CLASSES=include.schema.PokemonSchema`
 
-## Como executar
+## Como executar (criação do ambiente)
 
 Como o Airflow depende de muitas configurações para que a infra funcione, utilizamos o [Astro CLI](https://www.astronomer.io/docs/astro/cli/install-cli?tab=windowswithwinget#install-the-astro-cli) para nos auxiliar na criação da infraestrutura.
 
@@ -27,6 +29,8 @@ O próximo comando que devemos executar é o `astro dev start`, que irá baixar 
 Caso seja necessário atualizar os containers, basta executar o comando `astro dev restart`.
 
 Para fazer o deploy (pago) na Astronomer, basta executar o comando `astro deploy`.
+
+Todas as bibliotecas que forem ser utilizadas no Docker e que não são utilizadas pelo Airflow (ex: SQL Alchemy) devem ser referenciadas no **requirements.txt** que é criado dentro da pasta *astro*.
 
 ## Arquivos de exemplo (src)
 
