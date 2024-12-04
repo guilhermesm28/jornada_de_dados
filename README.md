@@ -6,8 +6,9 @@ Bem-vindo ao meu repositório de estudos do curso **Jornada de Dados** do [Lucia
 
 ```plaintext
 .
-├── airflow            # Workshop de Airflow            (Em andamento)
-├── docker             # Workshop de Docker             (Finalizado)
-├── python             # Bootcamp de Python             (Finalizado)
-├── sql                # Bootcamp de SQL                (Finalizado)
-└── streamlit          # Workshop de Streamlit          (Finalizado)
+├── airflow             # Workshop de Airflow                       (Em andamento)
+├── docker              # Workshop de Docker                        (Finalizado)
+├── python              # Bootcamp de Python                        (Finalizado)
+├── sql                 # Bootcamp de SQL                           (Finalizado)
+├── streamlit           # Workshop de Streamlit                     (Finalizado)
+└── scraping            # Bootcamp de Web Scraping com Python       (Em andamento)
