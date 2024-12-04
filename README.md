@@ -11,4 +11,4 @@ Bem-vindo ao meu repositório de estudos do curso **Jornada de Dados** do [Lucia
 ├── python              # Bootcamp de Python                        (Finalizado)
 ├── sql                 # Bootcamp de SQL                           (Finalizado)
 ├── streamlit           # Workshop de Streamlit                     (Finalizado)
-└── scraping            # Bootcamp de Web Scraping com Python       (Em andamento)
+└── web_scraping        # Bootcamp de Web Scraping com Python       (Em andamento)
