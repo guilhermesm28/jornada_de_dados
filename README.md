@@ -1,6 +1,6 @@
 # Jornada de Dados
 
-Bem-vindo ao meu repositório de estudos do curso **Jornada de Dados** do [Luciano Filho](https://github.com/lvgalvao). Aqui, você encontrará todo o material, anotações e projetos que desenvolvi ao longo do curso, assim como o progresso das atividades em andamento. Para mais detalhes sobre o curso, consulte o [Github](https://github.com/lvgalvao/data-engineering-roadmap) do projeto original.
+Bem-vindo ao meu repositório de estudos do curso *Jornada de Dados* do [Luciano Filho](https://github.com/lvgalvao). Aqui, você encontrará todo o material, anotações e projetos que desenvolvi ao longo do curso, assim como o progresso das atividades em andamento. Para mais detalhes sobre o curso, consulte o [Github](https://github.com/lvgalvao/data-engineering-roadmap) do projeto original.
 
 ## Estrutura do repositório
 
