@@ -25,9 +25,7 @@ class PaoDeAcucarScraper:
         return self.products
 
     def _configure_session(self):
-        retry_strategy = Retry(
-            total=3, status_forcelist=[403, 404, 429, 500, 502, 503, 504]
-        )
+        retry_strategy = Retry(total=3, status_forcelist=[403, 429, 500, 502, 503, 504])
         adapter = HTTPAdapter(max_retries=retry_strategy)
         session = requests.Session()
         session.mount("https://", adapter)
