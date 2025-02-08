@@ -10,9 +10,13 @@ python = ">=3.12,<3.13"
 apache-airflow = "^2.10.2"
 loguru = "^0.7.2"
 streamlit = "^1.39.0"
-pandas = "^2.2.3"
+pandas = "<2.2.0"
 requests = "^2.32.3"
 pydantic = "^2.10.2"
+apache-airflow-providers-postgres = "^6.0.0"
+airflow-provider-duckdb = "^0.2.0"
+astro-sdk-python = {extras = ["duckdb"], version = "^1.8.1"}
+duckdb = "^1.2.0"
 
 
 [build-system]
