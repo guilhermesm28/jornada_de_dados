@@ -6,7 +6,7 @@ Bem-vindo ao meu repositório de estudos do curso *Jornada de Dados* do [Luciano
 
 ```plaintext
 .
-├── airflow             # Workshop de Airflow                       (Em andamento)
+├── airflow             # Workshop de Airflow                       (Finalizado)
 ├── docker              # Workshop de Docker                        (Finalizado)
 ├── python              # Bootcamp de Python                        (Finalizado)
 ├── sql                 # Bootcamp de SQL                           (Finalizado)
